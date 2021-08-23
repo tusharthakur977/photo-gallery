@@ -1,0 +1,398 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #ffff;
+}
+
+.container{
+	display: inline-block;
+	width: 100%;
+	background-image: url(../bg2.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	text-align: center;
+	font-family: sans-serif;
+		}
+
+		 .container .imghead{
+		 	font-weight: bold;
+		 	font-size: 35px;
+		 	margin: 240px 0;
+		 	margin-bottom: 50px;
+		 	background: transparent;
+		 }
+
+		input[type=radio]{
+			display: none;
+		}
+		 .container .imghead:before{
+		 	content: '';
+		 	position: absolute;
+		 	width: 200px;
+		 	height: 3px;
+		 	top: 2160px;
+		 	left: 50%;
+		 	transform: translateX(-50%);
+		 	animation: animate 4s linear infinite;
+		 	background-color: crimson;
+		 }
+
+		@keyframes animate{
+			0%{
+				width:450px ;
+			}
+			50%{
+				width:600px ;
+			}
+			100%{
+				width:450px ;
+			}
+		}
+
+		.top_content{
+			background-color: rgb(243, 243, 243);
+			width: 90%;
+			display: flex;
+			align-items: center;
+			margin: 0 auto 20px auto;
+			height: 60px;
+			box-shadow: 3px 3px 5px black;
+			border-radius: 20px;
+			border-radius: 5px ;
+		}
+
+		.top_content h3{
+			height: 100%;
+			padding: 0 50px;
+			line-height: 60px;
+			background-color:black;
+			border-radius: 0px;
+			color: white;
+
+		}
+
+		.top_content label{
+			display: inline-block;
+			height: 100%;
+			margin: 0 20px ;
+			line-height: 60px;
+			font-size: 18px;
+			color: gray;
+			cursor: pointer;
+			transition:  color .3s;
+		}
+
+		.top_content label:hover{
+			color: black;
+			
+		}
+
+		.photo-gallery{
+			background:transparent;
+			width: 90vw;
+			left: 50%;
+			position: relative;
+			transform: translateX(-50%);
+			display: grid;
+			margin: 60px 80px 100px auto;
+			grid-row-gap: 60px;
+			grid-template-columns: repeat(3, 2fr);
+		}
+
+		.pic{
+			position: relative;
+			height: 30vh;
+			width: 25vw;
+			border-radius: 10px;
+			box-shadow: 3px 3px 5px black;
+			cursor: pointer;
+			transition: .5s;
+		}
+
+		.pic img{
+			height: 100%;
+			width: 100%;
+			border-radius: 10px;
+			transition: .4s;
+		}
+		.pic a{
+			background: transparent;
+		}
+		.pic::before{
+			font-family: cursive;
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			color: white;
+			font-size: 20px;
+			font-weight: bold;
+			width: 100%;
+			transition: .3s;
+			transition-delay: .2s;
+			z-index: 1;
+		}
+
+		.pic::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			height: 100%;
+			border-radius: 10px;
+			transition: .3s;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		.pic:hover::after{
+			height: 0;
+		}
+
+		.pic:hover::before{
+			margin-top: 0;
+			opacity: 0;
+			z-index: 0;
+		}
+
+		#check1:checked ~ .container .photo-gallery .dharamsala{
+				opacity: 1;
+			transform: scale(1);
+			position: relative;
+		}
+
+		#check1:checked ~ .container .photo-gallery .manali,
+		#check1:checked ~ .container .photo-gallery .shimla,
+		#check1:checked ~ .container .photo-gallery .kasauli,
+		#check1:checked ~ .container .photo-gallery .dal,
+		#check1:checked ~ .container .photo-gallery .chitkul,
+		#check1:checked ~ .container .photo-gallery .bir{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: 0s;
+		}
+
+		#check2:checked ~ .container .photo-gallery .manali{
+				opacity: 1;
+			transform: scale(1);
+			position: relative;
+		}
+
+		#check2:checked ~ .container .photo-gallery .dharamsala,
+		#check2:checked ~ .container .photo-gallery .shimla,
+		#check2:checked ~ .container .photo-gallery .kasauli,
+		#check2:checked ~ .container .photo-gallery .dal,
+		#check2:checked ~ .container .photo-gallery .chitkul,
+		#check2:checked ~ .container .photo-gallery .bir{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: 0s;
+		}
+
+		#check3:checked ~ .container .photo-gallery .shimla{
+				opacity: 1;
+			transform: scale(1);
+			position: relative;
+		}
+
+		#check3:checked ~ .container .photo-gallery .dharamsala,
+		#check3:checked ~ .container .photo-gallery .manali,
+		#check3:checked ~ .container .photo-gallery .kasauli,
+		#check3:checked ~ .container .photo-gallery .dal,
+		#check3:checked ~ .container .photo-gallery .chitkul,
+		#check3:checked ~ .container .photo-gallery .bir{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: 0s;
+		}
+
+		#check4:checked ~ .container .photo-gallery .bir{
+				opacity: 1;
+			transform: scale(1);
+			position: relative;
+		}
+
+		#check4:checked ~ .container .photo-gallery .dharamsala,
+		#check4:checked ~ .container .photo-gallery .manali,
+		#check4:checked ~ .container .photo-gallery .dal,
+		#check4:checked ~ .container .photo-gallery .kasauli,
+		#check4:checked ~ .container .photo-gallery .chitkul,
+		#check4:checked ~ .container .photo-gallery .shimla{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: 0s;
+		}
+
+		#check5:checked ~ .container .photo-gallery .kasauli{
+		opacity: 1;
+		transform: scale(1);
+		position: relative;
+		}
+
+		#check5:checked ~ .container .photo-gallery .dharamsala,
+		#check5:checked ~ .container .photo-gallery .manali,
+		#check5:checked ~ .container .photo-gallery .bir,
+		#check5:checked ~ .container .photo-gallery .dal,
+		#check5:checked ~ .container .photo-gallery .chitkul,
+		#check5:checked ~ .container .photo-gallery .shimla{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: 0s;
+		}
+
+		#check6:checked ~ .container .photo-gallery .dal{
+		opacity: 1;
+		transform: scale(1);
+		position: relative;
+		}
+
+		#check6:checked ~ .container .photo-gallery .dharamsala,
+		#check6:checked ~ .container .photo-gallery .manali,
+		#check6:checked ~ .container .photo-gallery .bir,
+		#check6:checked ~ .container .photo-gallery .kasauli,
+		#check6:checked ~ .container .photo-gallery .chitkul,
+		#check6:checked ~ .container .photo-gallery .shimla{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: 0s;
+		}
+
+		#check7:checked ~ .container .photo-gallery .chitkul{
+		opacity: 1;
+		transform: scale(1);
+		position: relative;
+		}
+
+		#check7:checked ~ .container .photo-gallery .dharamsala,
+		#check7:checked ~ .container .photo-gallery .manali,
+		#check7:checked ~ .container .photo-gallery .bir,
+		#check7:checked ~ .container .photo-gallery .dal,
+		#check7:checked ~ .container .photo-gallery .kasauli,
+		#check7:checked ~ .container .photo-gallery .shimla{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: 0s;
+		}
+
+
+		.maphead{
+			display: flex;
+			flex-wrap: wrap;
+			top: 50px;
+			position: relative;
+			background-color: transparent;
+		}
+
+		.mapicon{
+			width: 18vw;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			background-color: transparent;
+		}
+
+
+		.map{
+			display: flex;
+			flex-wrap: wrap;
+			background-color: transparent;
+			width:  88vw;
+			left: 50%;
+			margin-top: 150px;
+			position: relative;
+			transform: translateX(-50%);
+			margin-bottom: 100px;
+			border-radius: 20px;
+		}
+
+		.sidepanel{
+			border-radius: 20px;
+			width: 27vw;
+			background: transparent;
+			margin-right: 15px;
+			
+		}
+		 .headin{
+		 	background-color: transparent;
+			display:inline-block;
+			border-radius: 10px;
+			height: 40px;
+			width: 100%;
+			position: relative;
+		}
+
+		.sidepanel .goo{
+			width: 6vw;
+			margin-left: 15px;
+			margin-top: 10px;
+			background-color: transparent;
+			position: relative;
+			float: left;
+		}
+
+		.headin h1{
+			font-weight:normal ;
+			top: 8px;
+			left: 65px;
+			font-size: 25px;
+			text-align: center;
+			background-color: transparent;
+			width: 10vw;
+			position: absolute;
+		}
+
+		.him{
+			border: 1px solid black;
+			top: 0;
+			height: 40%;
+			position: relative;
+			width: 100%;
+		}
+
+		.facts {
+			border: 1px solid black;
+			width: 100%;
+			border-radius: 15px;
+			background: rgba(255,255,255,0.3);
+			box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+			background-color: transparent;
+			height: 20vw;
+		}
+
+		.hp1{
+			border-radius: 15px;
+			font-family: cursive;
+			font-size: 1em;
+			font-weight:bold;
+			background-color: transparent;
+			text-align:center;
+			padding-left: 10px;
+		}
+
+		.para{
+			background-color: transparent;
+			letter-spacing: 2px;
+			float: left;
+			font-size: 1em;
+			text-align: center;
+			margin-top: 4px;
+			padding: 10px;
+		}
+		iframe{
+			margin-top: 45px;
+			background: transparent;
+			float: right;
+			border-radius: 10px;
+			box-shadow:  3px 3px 5px black;
+			position: relative;
+		}
